@@ -1,9 +1,55 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swell Visuals - Fotografía de Surf by Anna</title>
+    
+    <!-- METADATOS SEO MEJORADOS -->
+    <title>Swell Visuals by Anna | Fotografía Profesional de Surf en Lanzarote</title>
+    <meta name="description" content="Fotografía profesional de surf en Lanzarote. Capturando la esencia del océano, olas perfectas y la conexión entre surfista y mar. Por Anna Bencomo.">
+    <meta name="keywords" content="fotografía surf, fotografía Lanzarote, surf Canarias, fotografía olas, fotógrafa surf, swell visuals, anna bencomo, surf photography">
+    <meta name="author" content="Anna Bencomo - Swell Visuals">
+    <meta name="robots" content="index, follow">
+    
+    <!-- OPEN GRAPH PARA REDES SOCIALES -->
+    <meta property="og:title" content="Swell Visuals by Anna | Fotografía de Surf">
+    <meta property="og:description" content="Fotografía profesional de surf en Lanzarote. Capturando momentos únicos en el océano.">
+    <meta property="og:image" content="https://i.ibb.co/NgJSkdXy/La-Santa-starting-of-the-winter-season-Pt-I-surfphotography-surf-surfing-photography.jpg">
+    <meta property="og:url" content="https://swellvisuals.com">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:locale:alternate" content="en_US">
+    
+    <!-- TWITTER CARDS -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Swell Visuals by Anna">
+    <meta name="twitter:description" content="Fotografía profesional de surf en Lanzarote">
+    <meta name="twitter:image" content="https://i.ibb.co/NgJSkdXy/La-Santa-starting-of-the-winter-season-Pt-I-surfphotography-surf-surfing-photography.jpg">
+    <meta name="twitter:site" content="@swellvisuals.proj">
+    
+    <!-- SCHEMA MARKUP PARA FOTÓGRAFO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Anna Bencomo",
+      "jobTitle": "Fotógrafa de Surf",
+      "url": "https://swellvisuals.com",
+      "image": "https://i.ibb.co/mr8XYQjW/Omg-so-what.jpg",
+      "sameAs": [
+        "https://www.instagram.com/swellvisuals.proj"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lanzarote",
+        "addressRegion": "Islas Canarias",
+        "addressCountry": "ES"
+      },
+      "description": "Fotógrafa amateur especializada en surf y paisajes costeros en Lanzarote",
+      "knowsAbout": ["Fotografía de surf", "Fotografía de paisaje", "Fotografía deportiva", "Océano", "Surf"]
+    }
+    </script>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
@@ -30,6 +76,7 @@
             background-color: #ffffff;
             line-height: 1.7;
             overflow-x: hidden;
+            transition: all 0.3s ease;
         }
         
         h1, h2, h3, h4 {
@@ -42,6 +89,45 @@
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+        
+        /* Botón de Traducción */
+        .language-switcher {
+            position: fixed;
+            top: 90px;
+            right: 30px;
+            z-index: 1001;
+            display: flex;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 8px 15px;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(173, 216, 230, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        .lang-btn {
+            background: none;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--secondary);
+        }
+        
+        .lang-btn.active {
+            background-color: var(--accent);
+            color: var(--secondary);
+            font-weight: 600;
+        }
+        
+        .lang-btn:hover:not(.active) {
+            background-color: rgba(173, 216, 230, 0.2);
         }
         
         /* Header Minimalista */
@@ -213,7 +299,7 @@
             fill: #ffffff;
         }
         
-        /* Galería de Instagram - CORREGIDA */
+        /* Galería de Instagram */
         .gallery-section {
             padding: 120px 0 80px;
             background-color: #ffffff;
@@ -722,6 +808,17 @@
             .about-img:after {
                 display: none;
             }
+            
+            .language-switcher {
+                top: 80px;
+                right: 20px;
+                padding: 6px 12px;
+            }
+            
+            .lang-btn {
+                font-size: 0.8rem;
+                padding: 5px 10px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -749,10 +846,21 @@
             .hero-wave svg {
                 height: 80px;
             }
+            
+            .language-switcher {
+                top: 70px;
+                right: 15px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Botón de Traducción -->
+    <div class="language-switcher" id="languageSwitcher">
+        <button class="lang-btn active" data-lang="es">ES</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+
     <!-- Header -->
     <header>
         <div class="header-container">
@@ -761,10 +869,10 @@
             </a>
             
             <ul class="nav-links">
-                <li><a href="#home">Inicio</a></li>
-                <li><a href="#gallery">Galería</a></li>
-                <li><a href="#about">Sobre mí</a></li>
-                <li><a href="#contact">Contacto</a></li>
+                <li><a href="#home" data-es="Inicio" data-en="Home">Inicio</a></li>
+                <li><a href="#gallery" data-es="Galería" data-en="Gallery">Galería</a></li>
+                <li><a href="#about" data-es="Sobre mí" data-en="About Me">Sobre mí</a></li>
+                <li><a href="#contact" data-es="Contacto" data-en="Contact">Contacto</a></li>
             </ul>
         </div>
     </header>
@@ -773,9 +881,11 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <img src="https://i.ibb.co/f6X78x3/Whats-App-Image-2026-01-18-at-11-12-57-removebg-preview.png" alt="Swell Visuals Logo" class="hero-logo">
-            <div class="hero-subtitle">Swell Visuals by Annaabencomo</div>
+            <div class="hero-subtitle" data-es="Swell Visuals by Annaabencomo" data-en="Swell Visuals by Annaabencomo">
+                Swell Visuals by Annaabencomo
+            </div>
             <a href="#gallery" class="btn">
-                <i class="fas fa-images"></i> Ver Galería
+                <i class="fas fa-images"></i> <span data-es="Ver Galería" data-en="View Gallery">Ver Galería</span>
             </a>
         </div>
         
@@ -790,7 +900,7 @@
     <section class="gallery-section" id="gallery">
         <div class="container">
             <div class="section-title">
-                <h2>Un poco de mi trabajo</h2>
+                <h2 data-es="Un poco de mi trabajo" data-en="My Work">Un poco de mi trabajo</h2>
                 <a href="https://www.instagram.com/swellvisuals.proj" target="_blank" class="instagram-link">
                     <i class="fab fa-instagram"></i> @swellvisuals.proj
                 </a>
@@ -800,7 +910,7 @@
                 <!-- Las fotos se cargarán aquí -->
                 <div class="gallery-loading" id="loading">
                     <div class="spinner"></div>
-                    <p style="margin-top: 20px; color: var(--secondary);">Cargando galería...</p>
+                    <p style="margin-top: 20px; color: var(--secondary);" data-es="Cargando galería..." data-en="Loading gallery...">Cargando galería...</p>
                 </div>
             </div>
         </div>
@@ -816,18 +926,23 @@
         
         <div class="about-content">
             <div class="about-img">
-                <img src="https://i.ibb.co/mr8XYQjW/Omg-so-what.jpg" alt="Anna - Fotógrafa de Surf">
+                <img src="https://i.ibb.co/mr8XYQjW/Omg-so-what.jpg" alt="Anna - Fotógrafa de Surf" loading="lazy">
             </div>
             
             <div class="about-text">
-                <h2>Sobre Mí</h2>
-                <p>Holaaa, soy Anna, fotógrafa amateur amante del mar y del surf, y alguien a quien le encanta la conexión única entre el ser humano y el océano. Aunque vivo en Lanzarote, mi pasión por el surf me ha llevado a visitar otros sitios maravillosos.</p>
-<p>Mi enfoque va más allá de simplemente tomar fotos: busco capturar momentos auténticos, emociones genuinas y la energía del mar. Cada imagen cuenta una historia, cada ola tiene su personalidad y cada atardecer es único.</p>
-
+                <h2 data-es="Sobre Mí" data-en="About Me">Sobre Mí</h2>
+                <p data-es="Holaaa, soy Anna, fotógrafa amateur amante del mar y del surf, y alguien a quien le encanta la conexión única entre el ser humano y el océano. Aunque vivo en Lanzarote, mi pasión por el surf me ha llevado a visitar otros sitios maravillosos." 
+                   data-en="Hi, I'm Anna, an amateur photographer who loves the sea and surfing, and someone who enjoys the unique connection between humans and the ocean. Although I live in Lanzarote, my passion for surfing has taken me to other wonderful places.">
+                    Holaaa, soy Anna, fotógrafa amateur amante del mar y del surf, y alguien a quien le encanta la conexión única entre el ser humano y el océano. Aunque vivo en Lanzarote, mi pasión por el surf me ha llevado a visitar otros sitios maravillosos.
+                </p>
+                <p data-es="Mi enfoque va más allá de simplemente tomar fotos: busco capturar momentos auténticos, emociones genuinas y la energía del mar. Cada imagen cuenta una historia, cada ola tiene su personalidad y cada atardecer es único."
+                   data-en="My approach goes beyond just taking photos: I seek to capture authentic moments, genuine emotions, and the energy of the sea. Each image tells a story, each wave has its personality, and every sunset is unique.">
+                    Mi enfoque va más allá de simplemente tomar fotos: busco capturar momentos auténticos, emociones genuinas y la energía del mar. Cada imagen cuenta una historia, cada ola tiene su personalidad y cada atardecer es único.
+                </p>
                 
                 <div class="location">
                     <i class="fas fa-map-marker-alt"></i>
-                    <span>Lanzarote, Islas Canarias</span>
+                    <span data-es="Lanzarote, Islas Canarias" data-en="Lanzarote, Canary Islands">Lanzarote, Islas Canarias</span>
                 </div>
             </div>
         </div>
@@ -842,11 +957,14 @@
         </div>
         
         <div class="contact-container">
-            <h2>Conoce más de mí</h2>
-            <p>Sígueme en Instagram para ver mis últimas publicaciones y estar al día de mis proyectos. Siempre estoy abierta a conversar sobre surf, fotografía y colaboraciones :). </p>
+            <h2 data-es="Conoce más de mí" data-en="Get to know me better">Conoce más de mí</h2>
+            <p data-es="Sígueme en Instagram para ver mis últimas publicaciones y estar al día de mis proyectos. Siempre estoy abierta a conversar sobre surf, fotografía y colaboraciones :)."
+               data-en="Follow me on Instagram to see my latest posts and stay updated on my projects. I'm always open to talking about surfing, photography, and collaborations :).">
+                Sígueme en Instagram para ver mis últimas publicaciones y estar al día de mis proyectos. Siempre estoy abierta a conversar sobre surf, fotografía y colaboraciones :).
+            </p>
             
             <a href="https://www.instagram.com/swellvisuals.proj" target="_blank" class="instagram-btn">
-                <i class="fab fa-instagram"></i> Seguir en Instagram
+                <i class="fab fa-instagram"></i> <span data-es="Seguir en Instagram" data-en="Follow on Instagram">Seguir en Instagram</span>
             </a>
         </div>
     </section>
@@ -854,13 +972,13 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <img src="https://i.ibb.co/f6X78x3/Whats-App-Image-2026-01-18-at-11-12-57-removebg-preview.png" alt="Swell Visuals Logo" class="footer-logo">
+            <img src="https://i.ibb.co/f6X78x3/Whats-App-Image-2026-01-18-at-11-12-57-removebg-preview.png" alt="Swell Visuals Logo" class="footer-logo" loading="lazy">
             
             <ul class="footer-links">
-                <li><a href="#home">Inicio</a></li>
-                <li><a href="#gallery">Galería</a></li>
-                <li><a href="#about">Sobre mí</a></li>
-                <li><a href="#contact">Contacto</a></li>
+                <li><a href="#home" data-es="Inicio" data-en="Home">Inicio</a></li>
+                <li><a href="#gallery" data-es="Galería" data-en="Gallery">Galería</a></li>
+                <li><a href="#about" data-es="Sobre mí" data-en="About">Sobre mí</a></li>
+                <li><a href="#contact" data-es="Contacto" data-en="Contact">Contacto</a></li>
             </ul>
             
             <div class="social-icons">
@@ -870,26 +988,178 @@
             </div>
             
             <div class="copyright">
-                <p>&copy; 2026 Swell Visuals by Anna. Diseñado con <i class="fas fa-heart" style="color:var(--primary)"></i> por AFD </p> . 
-<p> Todos los derechos reservados.</p>
-              
+                <p data-es="&copy; 2026 Swell Visuals by Anna. Diseñado con <i class='fas fa-heart' style='color:var(--primary)'></i> por AFD. Todos los derechos reservados."
+                   data-en="&copy; 2026 Swell Visuals by Anna. Designed with <i class='fas fa-heart' style='color:var(--primary)'></i> by AFD. All rights reserved.">
+                    &copy; 2026 Swell Visuals by Anna. Diseñado con <i class="fas fa-heart" style="color:var(--primary)"></i> por AFD. Todos los derechos reservados.
+                </p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Tus fotos de Instagram CORREGIDAS - SIN CAPTIONS
+        // ============================
+        // SISTEMA DE TRADUCCIÓN
+        // ============================
+        
+        let currentLanguage = 'es';
+        
+        // Elementos traducibles con sus textos
+        const translations = {
+            es: {
+                // Meta tags
+                title: "Swell Visuals by Anna | Fotografía Profesional de Surf en Lanzarote",
+                description: "Fotografía profesional de surf en Lanzarote. Capturando la esencia del océano, olas perfectas y la conexión entre surfista y mar. Por Anna Bencomo.",
+                
+                // Navigation
+                home: "Inicio",
+                gallery: "Galería",
+                about: "Sobre mí",
+                contact: "Contacto",
+                
+                // Hero
+                viewGallery: "Ver Galería",
+                
+                // Gallery
+                myWork: "Un poco de mi trabajo",
+                loadingGallery: "Cargando galería...",
+                
+                // About
+                aboutMe: "Sobre Mí",
+                location: "Lanzarote, Islas Canarias",
+                
+                // Contact
+                knowMore: "Conoce más de mí",
+                followInstagram: "Seguir en Instagram",
+                
+                // Footer
+                copyright: "© 2026 Swell Visuals by Anna. Diseñado con ❤️ por AFD. Todos los derechos reservados."
+            },
+            en: {
+                // Meta tags
+                title: "Swell Visuals by Anna | Professional Surf Photography in Lanzarote",
+                description: "Professional surf photography in Lanzarote. Capturing the essence of the ocean, perfect waves and the connection between surfer and sea. By Anna Bencomo.",
+                
+                // Navigation
+                home: "Home",
+                gallery: "Gallery",
+                about: "About Me",
+                contact: "Contact",
+                
+                // Hero
+                viewGallery: "View Gallery",
+                
+                // Gallery
+                myWork: "My Work",
+                loadingGallery: "Loading gallery...",
+                
+                // About
+                aboutMe: "About Me",
+                location: "Lanzarote, Canary Islands",
+                
+                // Contact
+                knowMore: "Get to know me better",
+                followInstagram: "Follow on Instagram",
+                
+                // Footer
+                copyright: "© 2026 Swell Visuals by Anna. Designed with ❤️ by AFD. All rights reserved."
+            }
+        };
+        
+        // Cambiar idioma
+        function changeLanguage(lang) {
+            currentLanguage = lang;
+            
+            // Actualizar botones de idioma
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                if (btn.dataset.lang === lang) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+            
+            // Actualizar meta tags
+            document.title = translations[lang].title;
+            document.querySelector('meta[name="description"]').setAttribute('content', translations[lang].description);
+            
+            // Actualizar elementos con data attributes
+            document.querySelectorAll('[data-es], [data-en]').forEach(element => {
+                if (element.dataset[lang]) {
+                    if (element.tagName === 'META' || element.tagName === 'TITLE') {
+                        // Para meta tags
+                        element.setAttribute('content', element.dataset[lang]);
+                    } else if (element.hasAttribute('alt')) {
+                        // Para imágenes con alt
+                        element.setAttribute('alt', element.dataset[lang]);
+                    } else if (element.hasAttribute('placeholder')) {
+                        // Para inputs
+                        element.setAttribute('placeholder', element.dataset[lang]);
+                    } else {
+                        // Para contenido normal
+                        if (element.innerHTML.includes('<i class')) {
+                            // Mantener iconos dentro del contenido
+                            const iconMatch = element.innerHTML.match(/<i class="[^"]*"><\/i>/);
+                            if (iconMatch) {
+                                element.innerHTML = iconMatch[0] + ' ' + element.dataset[lang];
+                            } else {
+                                element.innerHTML = element.dataset[lang];
+                            }
+                        } else {
+                            element.innerHTML = element.dataset[lang];
+                        }
+                    }
+                }
+            });
+            
+            // Actualizar el atributo lang del html
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            
+            // Guardar preferencia en localStorage
+            localStorage.setItem('preferredLanguage', lang);
+            
+            console.log(`🌐 Idioma cambiado a: ${lang.toUpperCase()}`);
+        }
+        
+        // Inicializar sistema de traducción
+        function initLanguageSystem() {
+            // Configurar eventos para los botones de idioma
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const lang = this.dataset.lang;
+                    changeLanguage(lang);
+                });
+            });
+            
+            // Cargar idioma guardado o detectar preferencia del navegador
+            const savedLang = localStorage.getItem('preferredLanguage');
+            const browserLang = navigator.language.substring(0, 2);
+            
+            if (savedLang) {
+                changeLanguage(savedLang);
+            } else if (browserLang === 'en') {
+                changeLanguage('en');
+            } else {
+                changeLanguage('es');
+            }
+        }
+        
+        // ============================
+        // GALERÍA DE INSTAGRAM
+        // ============================
+        
+        // Tus fotos de Instagram
         const instagramPhotos = [
             {
                 id: 1,
                 image: 'https://i.ibb.co/YTjK9kBf/VOL-II-I-don-t-always-know-what-I-m-looking-for-when-I-pick-up-the-camera-but-I-always-find-s-1.jpg',
-                alt: 'VOL II - Fotografía de surf',
+                alt: 'VOL II - Surf photography',
                 link: 'https://www.instagram.com/swellvisuals.proj'
             },
             {
                 id: 2,
                 image: 'https://i.ibb.co/jZ3cHpsD/VOL-II-I-don-t-always-know-what-I-m-looking-for-when-I-pick-up-the-camera-but-I-always-find-s.jpg',
-                alt: 'VOL II - Fotografía artística',
+                alt: 'VOL II - Artistic photography',
                 link: 'https://www.instagram.com/swellvisuals.proj'
             },
             {
@@ -901,7 +1171,7 @@
             {
                 id: 4,
                 image: 'https://i.ibb.co/sdRFgxZ6/La-Santa-starting-of-the-winter-season-Pt-I-surfphotography-surf-surfing-photography-1.jpg',
-                alt: 'Caleta de Famara - Vista panorámica',
+                alt: 'Caleta de Famara - Panoramic view',
                 link: 'https://www.instagram.com/swellvisuals.proj'
             },
             {
@@ -913,14 +1183,16 @@
             {
                 id: 6,
                 image: 'https://i.ibb.co/FbkWTFmt/Golden-hours-no-Wi-Fi-a-messy-road-and-moments-that-didn-t-feel-real-There-are-places-you-vis.jpg',
-                alt: 'Golden hours - Fotografía de surf',
+                alt: 'Golden hours - Surf photography',
                 link: 'https://www.instagram.com/swellvisuals.proj'
             }
-
         ];
 
         // Cargar página
         document.addEventListener('DOMContentLoaded', function() {
+            // Inicializar sistema de traducción
+            initLanguageSystem();
+            
             // Cargar galería inmediatamente
             loadInstagramGallery();
             
@@ -970,7 +1242,7 @@
             }, 500);
         }
         
-        // Renderizar galería - VERSIÓN SIMPLIFICADA SIN CAPTIONS
+        // Renderizar galería
         function renderGallery(photos) {
             const galleryContainer = document.getElementById('instagramGallery');
             galleryContainer.innerHTML = '';
@@ -1001,7 +1273,7 @@
                 const img = new Image();
                 img.src = photo.image;
                 img.onerror = function() {
-                    console.warn(`Error cargando imagen: ${photo.image}`);
+                    console.warn(`Error loading image: ${photo.image}`);
                 };
             });
         }
@@ -1012,8 +1284,10 @@
             
             // Mostrar mensaje de bienvenida en consola
             console.log('%c🌊 SWELL VISUALS by ANNA', 'font-size: 20px; font-weight: bold; color: #EBBC77; background: #000000; padding: 15px; border-radius: 5px;');
-            console.log('%cWeb cargada correctamente ✅', 'color: #4CAF50; font-weight: bold;');
-            console.log('%c7 fotos de alta calidad cargadas', 'color: #ADD8E6;');
+            console.log('%c✅ Web optimizada con SEO y traducción', 'color: #4CAF50; font-weight: bold;');
+            console.log('%c🌐 Idiomas disponibles: Español (ES) / English (EN)', 'color: #ADD8E6;');
+            console.log('%c🔍 Metadatos SEO configurados para mejor posicionamiento', 'color: #4CAF50;');
+            console.log('%c📸 Galería de 6 fotos profesionales cargada', 'color: #ADD8E6;');
         };
     </script>
 </body>
